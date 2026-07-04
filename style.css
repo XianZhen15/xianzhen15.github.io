@@ -1,0 +1,181 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #101c24; /* Keyboard main dark background */
+    color: #ffffff;            /* Crisp white text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- PROFILE HEADER --- */
+header {
+    text-align: center;
+    padding: 50px 20px 30px 20px;
+    background: linear-gradient(180deg, #13222c 0%, #101c24 100%);
+    border-bottom: 1px solid #1c2c35;
+}
+
+/* 🟥🟩🟦 CUSTOM COLOR FRAME FOR PROFILE PICTURE */
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+    
+    /* Creates a 4px thickness frame using a smooth Red, Green, and Blue gradient wrap */
+    padding: 4px; 
+    background: linear-gradient(135deg, #ff3333 0%, #07c160 50%, #1877f2 100%);
+    
+    box-shadow: 0 4px 20px rgba(24, 119, 242, 0.25);
+}
+
+header h1 {
+    margin: 15px 0 5px 0;
+    font-size: 2rem;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+header .subtitle {
+    color: #536d7a; /* Muted blue-gray text */
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 0;
+    letter-spacing: 1px;
+}
+
+/* --- SECTIONS (Styled like individual keyboard keys) --- */
+.section {
+    background: #1c2c35; /* Key background color */
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #243742; /* Soft key borders */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* 🟥 SECTION HEADINGS ACCENTS */
+h2 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-top: 0;
+    
+    /* Changed the old gray underline into a distinct bright slate/blue underline accent */
+    border-bottom: 2px solid #1877f2; 
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* 🟩 CUSTOM BULLET POINTS FOR SKILLS LIST */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    color: #e2e8f0;
+}
+
+/* Uses the green accent color for bullets to draw the eye directly to your skills */
+ul li::before {
+    content: "•";
+    position: absolute;
+    left: 5px;
+    color: #536d7a; /* Muted blue-gray for a super clean layout */
+    font-size: 1.2rem;
+}
+
+p {
+    color: #e2e8f0;
+}
+
+/* --- LIVE REPAIR LOG FILTER INTERFACE --- */
+.search-box {
+    width: 100%;
+    padding: 12px;
+    background-color: #101c24;
+    border: 1px solid #536d7a;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+.search-box:focus {
+    outline: 2px solid #1877f2; /* Glow highlight color when active */
+}
+
+/* Scrollable container for housing massive amounts of separate post links */
+.log-container {
+    max-height: 400px; 
+    overflow-y: auto;  
+    border: 1px solid #243742;
+    border-radius: 8px;
+    background-color: #101c24;
+}
+
+.log-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-bottom: 1px solid #243742;
+    text-decoration: none;
+    color: #ffffff;
+    transition: background 0.1s;
+}
+.log-item:last-child { border-bottom: none; }
+.log-item:active { background-color: #1c2c35; }
+
+.log-details {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+.device-name { font-weight: bold; font-size: 0.95rem; }
+.repair-type { color: #536d7a; font-size: 0.85rem; }
+.go-link { color: #536d7a; font-weight: bold; font-size: 0.9rem; }
+
+/* --- CONTACT LINKS --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+@media(min-width: 480px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.1s;
+    color: #fff;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.fb { background-color: #1877f2; }    /* Blue contact button */
+.wechat { background-color: #07c160; }/* Green contact button */
